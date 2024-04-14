@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+.nav{
+    width: 100vw;
+    height: 8vh;
+    background-color: rgb(33, 37, 41);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.logoMain{
+    height: 100%;
+    width: 11%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+.logoMain > img {
+    height: 90%;
+    width: 30%;
+}
+.logo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    height: 90%;
+    width: 62%;
+    font-family: "Ubuntu";
+    color: rgb(253, 60, 65);
+}
+#Finder{
+    color: white;
+}
+.lightDarkMode{
+    height: 68%;
+    width: 2.5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    border: 3px solid white;
+    border-radius: 15px;
+}
+.lightDarkMode > img {
+    height: 90%;
+    width: 90%;
+}
+.main{
+    width: 100vw;
+    height: 92vh;
+    background-color: rgb(39, 43, 47);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.main1{
+    width: 30%;
+    height: 12%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    border: 5px solid rgba(253, 60, 66);
+    border-radius: 60px;
+}
+.main1 > input{
+    width: 90%;
+    height: 90%;
+    border: 4px solid rgb(253, 60, 65);
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    background-color: rgba(0, 0, 0, 0.09);
+    backdrop-filter: blur(10px);
+    padding-left: 15px;
+    padding-right: 10px;
+    color: rgb(254, 188, 44);
+    font-weight: 600;
+    font-family: "Noto Sans JP";
+}
+.main1 > input::placeholder{
+    font-family: "Noto Sans JP";
+    color: rgba(254, 187, 44, 0.600);
+    font-weight: 600;
+}
+.main1 > input:focus{
+    outline-width: 0px;
+}
+.main1 > button{
+    width: 20%;
+    height: 90%;
+    border: 4px solid rgb(253, 60, 65);
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    background-color: rgb(253, 60, 65);
+    color: rgb(254, 188, 44);
+    font-family: "Noto Sans JP";
+    font-weight: 500;
+    font-size: medium;
+}
+.main1 > button:active{
+    width: 20%;
+    height: 90%;
+    border: 4px solid rgb(253, 60, 65);
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    background-color: rgb(254, 188, 44);
+    color: rgb(253, 60, 65);
+    font-family: "Noto Sans JP";
+    font-weight: 500;
+    font-size: medium;
+}
+.UserData{
+    margin-top: 20px;
+    height: 20%;
+    width: 30%;
+    border: 2px solid rgb(254, 188, 44);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.inner{
+    border-radius: 13px;
+    height: 97%;
+    width: 99%;
+    border: 2px solid rgb(254, 188, 44);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.inner > img{
+    height: 88%;
+    width: 23%;
+    /* border-radius: 55px; */
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+}
+.data{
+    height: 88%;
+    width: 73%;
+    background-color: rgb(33, 37, 41);
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+a{
+    text-decoration: none;
+    cursor: pointer;
+}
+.data > h1{
+    color: rgb(253, 60, 65);
+    font-size: x-large;
+    font-family: "Ubuntu";
+    margin-left: 8px;
+}
+.data > h2{
+    color: rgb(255, 217, 134);
+    font-size: large;
+    font-family: "Nunito";
+    margin-left: 8px;
+}
+.data > h3{
+    color: rgb(255, 217, 134);
+    font-size: small;
+    font-family: "Nunito";
+    margin-left: 8px;
+}
+.followers{
+    margin-left: 3px;
+    width: 98%;
+    height: 32%;
+    background-color: rgb(39, 43, 47);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom-right-radius: 10px;
+}
+.followers > h2{
+    font-size: 16px;
+    color: rgb(77, 84, 91);
+    font-family: "Fira Sans";
+}
+.followers > h2:active{
+    font-size: 18px;
+    color: rgb(77, 84, 91);
+}
