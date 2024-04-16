@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+
+.mainPostCard{
+    background-color: rgb(33, 37, 41);
+    width: 98%;
+    height: 180px;
+    border-radius: 15px;
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+}
+.name{
+    margin-top: 10px;
+    width: 99%;
+    height: 25%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 12px;
+    padding-right: 12px;
+    color: rgba(255, 179, 0, 0.742);
+}
+.bio{
+    margin-top: 6px;
+    padding-top: 5px;
+    padding-left: 12px;
+    padding-right: 12px;
+    width: 99%;
+    height: 40%;
+    color: rgba(255, 255, 255, 0.419);
+}
+.bio > h3{
+    font-size: small;
+    font-family: "Fira Sans";
+}
+.repoInfo{
+    margin-top: 6px;
+    padding-left: 12px;
+    padding-right: 12px;
+    width: 100%;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    height: 23%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    background-color: rgba(39, 43, 47, 0.721);
+    border: none;
+}
+.name > h2{
+    font-family: "Nunito";
+}
+button{
+    padding: 3px;
+    font-family: "Ubuntu";
+    border-radius: 5px;
+    width: 16%;
+    font-size: 12px;
+    color: rgb(216, 59, 56);
+    border: none;
+    background-color: rgb(52, 44, 47);
+}
+#lang{
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-left: 12px;
+    padding-right: 12px;
+    background-color: rgb(64, 60, 46);
+    border-radius: 5px;
+    font-family: "Ubuntu";
+    font-size: small;
+    color: rgb(255, 193, 47);
+}
+.repoInfo > h4{
+    font-family: "Ubuntu";
+    font-size: small;
+    color: rgb(81, 89, 95);
+}

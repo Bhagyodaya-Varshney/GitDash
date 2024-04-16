@@ -18,13 +18,16 @@ export const Main = () => {
       data = await response.json();
       if(data.message == "Not Found") setData("");
       else{
-        localStorage.setItem("username",data.login)
         setData(data);
       } 
   }
-  const userMain = async() =>{
-    Navigate(`/${data.login}`);
+  const userMain = () =>{
+    localStorage.setItem("username",data.login)
   }
+
+  window.onpopstate = function(){
+    userMain();
+  };
 
   return (
     <>
@@ -44,7 +47,7 @@ export const Main = () => {
             <button type="submit" id="search-btn">Search</button>
           </form>
           {
-            data ? <Link to="/username" className="UserData">
+            data ? <Link to="/username" className="UserData" onClick={userMain}>
               <div className="inner">
                 <img src= {data.avatar_url} alt="" />
                 <div className="data">
