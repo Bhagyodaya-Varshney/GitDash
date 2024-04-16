@@ -53,9 +53,6 @@ export const MainScreen = () => {
             <h2 id="Finder">Finder</h2>
           </div>
         </div>
-        <div className="lightDarkMode">
-          <img src={moon} alt="" />
-        </div>
       </div>
       <div className="mainScreen">
         <div className="userProfileDetails">
@@ -85,7 +82,7 @@ export const MainScreen = () => {
               <Link>Forked</Link>
             </button>
             <button>
-              <Link>Followers</Link>
+              <Link to="/username/follower">Followers</Link>
             </button>
             <button>
               <Link>Following</Link>
@@ -111,7 +108,7 @@ export const MainScreen = () => {
             </div>
             <div className="repoMainLeft">
               {searchRepoData ? (
-                <Link className="mainPostCard" to="/username/repo">
+                <Link className="mainPostCard" to="/username/repo" onClick={localRepoName(searchRepoData.name)}>
                   <div className="name">
                     <h2>{searchRepoData.name}</h2>
                     <button>PUBLIC</button>

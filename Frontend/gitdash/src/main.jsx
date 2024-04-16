@@ -1,35 +1,24 @@
 import "./main.css";
-import React, { useEffect, useState} from "react";
+import React, {useState,useEffect} from "react";
 import logo from "./assests/logo.png";
 import moon from "./assests/moon.png"
-import { Link,useNavigate } from "react-router-dom";
+import { Link} from "react-router-dom";
+import axios from "axios";
+import { MainScreen } from "./MainScreen";
 
 export const Main = () => {
 
-  const Navigate = useNavigate();
-
   const [username , setUsername] = useState("");
-  let  [data , setData] = useState("");
-  const api_URL = "https://api.github.com/users/";
+  const  [data , setData] = useState(null);
 
-  const userData = async(e) =>{
-      e.preventDefault();
-      const response = await fetch(api_URL+username);
-      data = await response.json();
-      if(data.message == "Not Found") setData("");
-      else{
-        setData(data);
-        setUsername("");
-      } 
+  const userData = async() =>{
+    try{
+      const response = await axios.get(`http://localhost:3001/${username}`);
+      setData(response.data);
+      localStorage.setItem("username",username);
+    }
+    catch(e){console.error('Error fetching user data:', e)}
   }
-  const userMain = () =>{
-    localStorage.setItem("username",data.login)
-  }
-
-  window.onpopstate = function(){
-    userMain();
-  };
-
   return (
     <>
       <div className="nav">
@@ -40,15 +29,14 @@ export const Main = () => {
             <h2 id="Finder">Finder</h2>
           </div>
         </div>
-        <div className="lightDarkMode"><img src={moon} alt="" /></div>
       </div>
       <div className="main">
-          <form action="" className="main1" onSubmit={userData}>
+          <div className="main1">
             <input type="text" id="search-box" placeholder="Search a Github User" value={username} onChange={(e)=>setUsername(e.target.value)}/>
-            <button type="submit" id="search-btn">Search</button>
-          </form>
+            <button type="submit" id="search-btn" onClick={userData}>Search</button>
+          </div>
           {
-            data ? <Link to="/username" className="UserData" onClick={userMain}>
+            data ? <Link to="/username" className="UserData">
               <div className="inner">
                 <img src= {data.avatar_url} alt="" />
                 <div className="data">
