@@ -33,9 +33,9 @@ export const MainScreen = () => {
     setsearchRepoData(searchRepoData);
   };
 
-  const localRepoName = (name) =>{
-    localStorage.setItem("repoName",name);
-  }
+  const localRepoName = (name) => {
+    localStorage.setItem("repoName", name);
+  };
 
   const exitUser = () => {
     localStorage.removeItem("username");
@@ -109,45 +109,50 @@ export const MainScreen = () => {
                 </button>
               </div>
             </div>
-            {searchRepoData ? (
-              <Link className="mainPostCard" to="/repo">
-                <div className="name">
-                  <h2>{searchRepoData.name}</h2>
-                  <button>PUBLIC</button>
+            <div className="repoMainLeft">
+              {searchRepoData ? (
+                <Link className="mainPostCard" to="/username/repo">
+                  <div className="name">
+                    <h2>{searchRepoData.name}</h2>
+                    <button>PUBLIC</button>
+                  </div>
+                  <div className="bio">
+                    <h3>{searchRepoData.description}</h3>
+                  </div>
+                  <div className="repoInfo">
+                    <h4 id="lang">{searchRepoData.language}</h4>
+                    <h4>{searchRepoData.open_issues_count} Open Issues</h4>
+                    <h4>{searchRepoData.forks} Fork</h4>
+                  </div>
+                </Link>
+              ) : (
+                <div className="repo">
+                  {repodata?.map((i) => {
+                        return (
+                          <Link
+                            className="mainPostCard"
+                            to="/username/repo"
+                            onClick={localRepoName(i.name)}
+                          >
+                            <div className="name">
+                              <h2>{i.name}</h2>
+                              <button>PUBLIC</button>
+                            </div>
+                            <div className="bio">
+                              <h3>{i.description}</h3>
+                            </div>
+                            <div className="repoInfo">
+                              <h4 id="lang">{i.language}</h4>
+                              <h4>{i.open_issues_count} Open Issues</h4>
+                              <h4>{i.forks} Fork</h4>
+                            </div>
+                          </Link>
+                        );
+                      })
+                    }
                 </div>
-                <div className="bio">
-                  <h3>{searchRepoData.description}</h3>
-                </div>
-                <div className="repoInfo">
-                  <h4 id="lang">{searchRepoData.language}</h4>
-                  <h4>{searchRepoData.open_issues_count} Open Issues</h4>
-                  <h4>{searchRepoData.forks} Fork</h4>
-                </div>
-              </Link>
-            ) : (
-              <div className="repo">
-                {
-                repodata.map((i) => {
-                  return (
-                    <Link className="mainPostCard" to="/username/repo" onClick={localRepoName(i.name)}>
-                      <div className="name">
-                        <h2>{i.name}</h2>
-                        <button>PUBLIC</button>
-                      </div>
-                      <div className="bio">
-                        <h3>{i.description}</h3>
-                      </div>
-                      <div className="repoInfo">
-                        <h4 id="lang">{i.language}</h4>
-                        <h4>{i.open_issues_count} Open Issues</h4>
-                        <h4>{i.forks} Fork</h4>
-                      </div>
-                    </Link>
-                  );
-                })
-                }
-              </div>
-            )}
+              )}
+            </div>
           </div>
         </div>
       </div>

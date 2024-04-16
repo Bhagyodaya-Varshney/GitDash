@@ -1,5 +1,5 @@
 import "./main.css";
-import React, { useState} from "react";
+import React, { useEffect, useState} from "react";
 import logo from "./assests/logo.png";
 import moon from "./assests/moon.png"
 import { Link,useNavigate } from "react-router-dom";
@@ -19,6 +19,7 @@ export const Main = () => {
       if(data.message == "Not Found") setData("");
       else{
         setData(data);
+        setUsername("");
       } 
   }
   const userMain = () =>{

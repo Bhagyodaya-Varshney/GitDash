@@ -130,15 +130,8 @@ h1{
     height: fit-content;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-}
-.repo{
-    width: 100%;
-    height: fit-content;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    row-gap: 5px;
-    column-gap: 6px;
 }
 .repoSearch{
     border-bottom: 2px solid rgb(33, 37, 41);
@@ -152,6 +145,17 @@ h1{
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+}
+.repoMainLeft{
+    width: 100%;
+    height: fit-content;
+}
+.repo{
+    width: 100%;
+    height: fit-content;
+    display: grid;
+    grid-template-columns: 98%;
+    row-gap: 5px;
 }
 .sort{
     width: 20%;
