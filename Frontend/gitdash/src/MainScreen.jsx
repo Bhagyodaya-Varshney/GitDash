@@ -91,7 +91,7 @@ export const MainScreen = () => {
               <Link>Following</Link>
             </button>
           </div>
-          <div className="repoMain">
+          <div className="repoMain1">
             <div className="repoSearch">
               <div className="sort">
                 <div className="sortName">Sort</div>
@@ -127,7 +127,8 @@ export const MainScreen = () => {
                 </Link>
               ) : (
                 <div className="repo">
-                  {repodata?.map((i) => {
+                  {repodata.length > 0
+                    ? repodata?.map((i) => {
                         return (
                           <Link
                             className="mainPostCard"
@@ -149,7 +150,7 @@ export const MainScreen = () => {
                           </Link>
                         );
                       })
-                    }
+                    : ""}
                 </div>
               )}
             </div>
