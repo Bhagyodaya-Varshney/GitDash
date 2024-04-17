@@ -4,7 +4,7 @@ import logo from "./assests/logo.png";
 import { Link } from "react-router-dom";
 import "./RepoPostCard.css";
 
-export const Follower = () => {
+export const Following = () => {
   let [data, setData] = useState("");
   let [followerdata, followersetData] = useState("");
 
@@ -15,7 +15,7 @@ export const Follower = () => {
     const response = await fetch(api_URL + username);
     data = await response.json();
     setData(data);
-    const response1 = await fetch(api_URL + username + "/followers");
+    const response1 = await fetch(api_URL + username + "/following");
     followerdata = await response1.json();
     followersetData(followerdata);
   };

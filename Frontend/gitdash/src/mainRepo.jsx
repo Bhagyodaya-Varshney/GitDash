@@ -6,7 +6,8 @@ import moon from "./assests/moon.png";
 export function Repo() {
   let [repoData, setRepoData] = useState("");
   let [repoLang, setRepoLang] = useState("");
-
+  let [tags, setTags] = useState("");
+ 
   const getRepoData = async (e) => {
     const username = localStorage.getItem("username");
     const reponame = localStorage.getItem("repoName");
@@ -16,8 +17,12 @@ export function Repo() {
     repoData = await response.json();
     const res = await fetch(repoData.languages_url);
     repoLang = await res.json();
+    console.log(repoLang);
+    const res1 = await fetch(repoData.tags_url);
+    tags = await res1.json();
     setRepoData(repoData);
     setRepoLang(repoLang);
+    setTags(tags);
   };
   useEffect(() => {
     getRepoData();
@@ -44,14 +49,14 @@ export function Repo() {
             <h2>{repoData.full_name}</h2>
             <button id="PublicPrivate">PUBLIC</button>
           </div>
-          <button id="linkGithub">See on Github</button>
+          <a id="linkGithub" href={repoData.html_url}>See on Github</a>
         </div>
         <div className="repoMain">
           <div className="repoSection1">
             <div className="repoSection1Nav">
               <div className="abc">
                 <button id="branch">{repoData.default_branch}</button>
-                <h3>{repoData.tags_url.length} Tags</h3>
+                <h3>{tags.length} Tags</h3>
               </div>
               <button id="codeCloneBtn">Code👇</button>
             </div>
@@ -66,7 +71,13 @@ export function Repo() {
             </div>
             <div className="lang">
               <h3>Language</h3>
-              <h4>{repoData.language}</h4>
+              {repoLang.length > 0
+                    ? repoLang?.map((i) => {
+                        return (
+                          <h4>BC</h4>
+                        );
+                      })
+                    : ""}
             </div>
             <div className="extrainfo">
               <p>Created : {repoData.created_at}</p>

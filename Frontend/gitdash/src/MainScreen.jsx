@@ -85,7 +85,7 @@ export const MainScreen = () => {
               <Link to="/username/follower">Followers</Link>
             </button>
             <button>
-              <Link>Following</Link>
+              <Link to="/username/following">Following</Link>
             </button>
           </div>
           <div className="repoMain1">
